@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+</head>
+<body>
+    <div>
+        <h1>Current Train Schedule</h1>
+        <div id="addCurrentTrain"></div>
+    </div>
+    <div>
+        <h1>Add Train</h1>
+        <p>Train Name</p>
+        <input type="text">
+        <p>Destination</p>
+        <input type="text">
+        <p>First Train Time (HH:mm - military time)</p>
+        <input type="text">
+        <p>Frequency (min)</p>
+        <input type="text"><br><br>
+        <input type="submit" value="Submit">
+    </div>
+
+    <script src="javascript/logic.js"></script>
+</body>
+</html>
