@@ -5,29 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Train Scheduler</title>
+    
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Bootstrap Reference -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
     <!-- Firebase Reference -->
     <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Moment.js Reference -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 </head>
 <body>
-    <div>
-        <h1>Current Train Schedule</h1>
-        <div id="addCurrentTrain"></div>
+    <div id="header">
+        <h1>Anytime is Train Time</h1>
+        <h2>Choo Choo. Chee Chee.</h2>
     </div>
-    <div>
-        <h1>Add Train</h1>
-        <p>Train Name</p>
-        <input type="text">
-        <p>Destination</p>
-        <input type="text">
-        <p>First Train Time (HH:mm - military time)</p>
-        <input type="text">
-        <p>Frequency (min)</p>
-        <input type="text"><br><br>
-        <input type="submit" value="Submit">
+    <br><br>
+    <div id="container" class="boxSet topBox">
+        <div id="trainSchedule">
+            <!-- TITLE -->
+            <h3 id="sub-Title" class="boxSet topBox">Current Train Schedule</h1>       
+        
+            <table class="table" id="trainTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency (min)</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                  </tr>
+                </thead>
+                
+                <!-- RESULTS GO HERE -->
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <br><br>
+        <div id="addTrain">
+          <!-- ADD TRAIN -->
+          <h3 id="sub-Title" class="boxSet topBox">Add Train</h2>
+          <div class="form-group row">
+              <label for="input-name">Train Name</label><br>
+              <input class="form-control" id="inputName" placeholder="Thomas the Train" type="text">
+          </div>
+          <div class="form-group row">
+              <label for="input-destination">Destination</label><br>
+              <input class="form-control" id="inputDestination" placeholder="Chicago" type="text">
+          </div>
+          <div class="form-group row">
+              <label for="input-time">First Train Time</label><br>
+              <input class="form-control" id="inputTime"type="time">
+          </div>
+          <div class="form-group row">
+              <label for="input-frequency">Frequency (min)</label><br>
+              <input class="form-control" id="inputFrequency" placeholder="12" type="number">
+          </div>
+
+          <!-- BUTTONS -->
+          <button class="btn btn-primary" id="submitButton" type="submit">Submit</button>
+          <!-- <button id="clearButton" class="button1">Clear Results</button> -->
+        </div>
     </div>
 
     <script src="javascript/logic.js"></script>
 </body>
 </html>
+
+<!--https://github.com/granteric498/Basic-Portfolio-->

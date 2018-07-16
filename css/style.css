@@ -1,0 +1,23 @@
+body {
+    padding: 8%;
+    background-color: lightblue;
+}
+
+#trainSchedule {
+    border: solid;
+    border-color: steelblue;
+    padding: 2%;
+}
+
+#addTrain {
+    border: solid;
+    border-color: steelblue;
+    padding: 2.5%;
+}
+
+#header {
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
+    padding: 6%;
+}
