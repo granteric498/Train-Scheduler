@@ -11,14 +11,13 @@ var config = {
   var database = firebase.database();
 
   // Button for adding trains
-$("#submitButton").on("click", function(event) {
+$("#submitButton").on("click", function (event) {
   event.preventDefault();
 
   // Grabs user input
   var trainName = $("#inputName").val().trim();
   var trainDestination = $("#inputDestination").val().trim();
   var trainTime = moment($("#inputTime").val().trim(), "hh:mm a").format("HH:mm");
-  var currentTime = moment().format('HH:mm');
   var trainFrequency = $("#inputFrequency").val().trim();
 
   // Creates local "temporary" object for holding train data
@@ -26,7 +25,6 @@ $("#submitButton").on("click", function(event) {
     name: trainName,
     destination: trainDestination,
     startTime: trainTime,
-    presentTime: currentTime,
     frequency: trainFrequency
   };
 
@@ -46,7 +44,7 @@ database.ref().on("child_added", function (childSnapshot) {
   var trainName = childSnapshot.val().name;
   var trainDestination = childSnapshot.val().destination;
   var trainTime = childSnapshot.val().startTime;
-  var currentTime = childSnapshot.val().presentTime;
+  var currentTime = moment().format('HH:mm');
   var trainFrequency = childSnapshot.val().frequency;
 
   // Convert the First Train Time into Next Arrival
